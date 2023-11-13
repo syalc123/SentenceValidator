@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 
 public class validSentenceTest {
 
-	String testValue;
-	boolean testResult;
+	String testValue; // values to be used during tests
+	boolean testResult; // result of method call
 
 	// Given that the first letter is capital but all other conditions are met. Then
 	// return false
@@ -44,7 +44,7 @@ public class validSentenceTest {
 	// Then return false
 	@Test
 	void testNegativeNumberEntered() {
-		testValue = "Second -13 \"\"sentence.";
+		testValue = "Second -9 \"\"sentence.";
 		testResult = SentenceValidator.validSentence(testValue);
 		assertEquals(testResult, false);
 	}
@@ -54,7 +54,7 @@ public class validSentenceTest {
 	// Then return false
 	@Test
 	void testIntegerLessThan13() {
-		testValue = "Second 13 \"\" sentence.";
+		testValue = "Second 12 \"\" sentence.";
 		testResult = SentenceValidator.validSentence(testValue);
 		assertEquals(testResult, false);
 	}
@@ -74,5 +74,15 @@ public class validSentenceTest {
 		testResult = SentenceValidator.validSentence(testValue);
 		assertEquals(testResult, true);
 	}
+	
+	//Given a fullstop is entered half way through the sentence then return false. 
+	@Test
+	void testFullStopEntered() {
+		testValue = "Second 14. \"\" sentence.";
+		testResult = SentenceValidator.validSentence(testValue);
+		assertEquals(testResult, false);
+	}
+	
+	
 
 }

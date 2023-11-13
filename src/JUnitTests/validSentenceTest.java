@@ -90,7 +90,8 @@ public class validSentenceTest {
 		testResult = SentenceValidator.validSentence(testValue);
 		assertEquals(testResult, false);
 	}
-	
+
+	// Given a word is entered with a capital and full stop. Then return false as it isn't a sentence
 	@Test 
 	void testOneWord() {
 		testValue = "Abcd.";

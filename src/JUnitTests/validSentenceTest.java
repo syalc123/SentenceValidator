@@ -21,7 +21,7 @@ public class validSentenceTest {
 
 	}
 
-	// Given that the last letter is not punctuation but all other conditions = true 
+	// Given that the last letter is not punctuation but all other conditions = true
 	// Then return false
 	@Test
 	void testLastCharPunctuation() {
@@ -34,17 +34,45 @@ public class validSentenceTest {
 	// Then return false
 	@Test
 	void testUnclosedQuotes() {
-		testValue = "Second two \" sentence";
+		testValue = "Second two \" sentence.";
 		testResult = SentenceValidator.validSentence(testValue);
 		assertEquals(testResult, false);
 	}
 
-	// Given that a negative number is entered quotations. But all other conditions are met
+	// Given that a negative number is entered quotations. But all other conditions
+	// are met
 	// Then return false
 	@Test
 	void testNegativeNumberEntered() {
-		testValue = "Second two \" sentence";
+		testValue = "Second -13 \"\"sentence.";
 		testResult = SentenceValidator.validSentence(testValue);
 		assertEquals(testResult, false);
 	}
+
+	// Given that an integer less than 13 is a digit and not typed But all other
+	// conditions are met
+	// Then return false
+	@Test
+	void testIntegerLessThan13() {
+		testValue = "Second 13 \"\" sentence.";
+		testResult = SentenceValidator.validSentence(testValue);
+		assertEquals(testResult, false);
+	}
+
+	//Given an integer less than 13 is typed. Then return true
+	@Test
+	void testIntegerLessThan13Typed() {
+		testValue = "Second one \"\" sentence.";
+		testResult = SentenceValidator.validSentence(testValue);
+		assertEquals(testResult, true);
+	}
+
+	//Given an integer greater than 14 is typed as a digit. Then return true.
+	@Test
+	void testIntegerGreater13() {
+		testValue = "Second 14 \"\" sentence.";
+		testResult = SentenceValidator.validSentence(testValue);
+		assertEquals(testResult, true);
+	}
+
 }

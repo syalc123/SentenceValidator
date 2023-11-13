@@ -8,10 +8,9 @@ public class validDateString {
 	}
 	
 	public boolean validSentence(String sentence) {
-		int quoteCounter = 0;
-		if(!Character.isUpperCase(sentence.charAt(0))) {
-			return false;
-		}
+		int quoteCounter = 0; // variable to keep track of all quotation marks
+		
+		String[] mys = sentence.split(" ");
 		
 		switch(sentence.charAt(sentence.length()-1)) {
 		case '.': break; 
@@ -19,6 +18,11 @@ public class validDateString {
 		case '!' : break; 
 		default: return false;
 		}
+		
+		for(String x : mys) {
+			
+		}
+		
 		
 		
 		/**
@@ -28,13 +32,20 @@ public class validDateString {
 			
 			if(sentence.charAt(i)== '"') {
 				quoteCounter++; 
-				
 			}
+			
+			if(sentence.charAt(i) == '.') {
+				return false; 
+			}
+			
 		}
+		
+		return quoteCounter %2 == 0 && Character.isUpperCase(sentence.charAt(0)); 
+		
 		
 
 		
-		return true; 
+		
 		
 	}
 

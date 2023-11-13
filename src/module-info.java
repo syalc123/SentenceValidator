@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author jayma
+ *
+ */
+module ValidSentence {
+}

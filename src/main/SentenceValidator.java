@@ -1,6 +1,6 @@
 package main;
 
-public class validDateString {
+public class SentenceValidator {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -55,7 +55,5 @@ public class validDateString {
 
 		//if the quoteCounter divides into two and the first Character is upper then it will return true. 
 		return quoteCounter % 2 == 0 && Character.isUpperCase(sentence.charAt(0));
-
 	}
-
 }

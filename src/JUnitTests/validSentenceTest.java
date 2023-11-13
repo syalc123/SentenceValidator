@@ -83,6 +83,19 @@ public class validSentenceTest {
 		assertEquals(testResult, false);
 	}
 	
+	//Given only one letter is entered return false
+	@Test
+	void testOneLeterIsEntered() {
+		testValue = "a";
+		testResult = SentenceValidator.validSentence(testValue);
+		assertEquals(testResult, false);
+	}
 	
+	@Test 
+	void testOneWord() {
+		testValue = "Abcd.";
+		testResult = SentenceValidator.validSentence(testValue);
+		assertEquals(testResult, false);
+	}
 
 }

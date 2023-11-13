@@ -66,6 +66,6 @@ public class SentenceValidator {
 		}
 
 		//if the quoteCounter divides into two and the first Character is upper then it will return true. 
-		return quoteCounter % 2 == 0 && Character.isUpperCase(sentence.charAt(0));
+		return quoteCounter % 2 == 0 && Character.isUpperCase(sentence.charAt(0)) && mys.length>1;
 	}
 }
